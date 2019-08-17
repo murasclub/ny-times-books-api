@@ -5,9 +5,7 @@ import org.springframework.http.HttpStatus;
 
 import java.util.List;
 
-public class NamesResponse {
-    public HttpStatus status;
-    public final String copyright = "Copyright (c) 2019 The New York Times Company.  All Rights Reserved.";
+public class NamesResponse extends BaseResponse {
 
     public List<BestsellerList> results;
 
