@@ -1,0 +1,1 @@
+alter table bestseller_list modify `updated` enum("WEEKLY","MONTHLY");
