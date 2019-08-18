@@ -1,9 +1,6 @@
 package com.nursultanturdaliev.nytimes.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Book {
@@ -19,6 +16,11 @@ public class Book {
     private String contributor_note;
     private String publisher;
     private Integer price;
+    private Integer bestseller_list_id;
+
+    @ManyToOne
+    @JoinColumn(insertable = false, updatable = false)
+    private BestsellerList bestsellerList;
 
     public String getTitle() {
         return title;
@@ -74,5 +76,13 @@ public class Book {
 
     public void setPrice(Integer price) {
         this.price = price;
+    }
+
+    public Integer getBestseller_list_id() {
+        return bestseller_list_id;
+    }
+
+    public void setBestseller_list_id(Integer bestseller_list_id) {
+        this.bestseller_list_id = bestseller_list_id;
     }
 }

@@ -45,11 +45,9 @@ public class ListsController {
 
         BestsellerList bestsellerList = bestSellerListRepository.findById(1).get();
 
-        Book book = bookRepository.findById(1).get();
-
         List<BookInfo> bookInfos = new LinkedList<>();
 
-        bookInfos.add(new BookInfo(bestsellerList,book));
+        bookInfos.add(new BookInfo(bestsellerList,bestsellerList.books.get(0)));
 
         return new BestSellerListResponse(HttpStatus.OK, bookInfos);
     }

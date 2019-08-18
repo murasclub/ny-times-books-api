@@ -1,10 +1,15 @@
 package com.nursultanturdaliev.nytimes.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
+@Data
+@EqualsAndHashCode(exclude = "books")
 
 @Entity
 public class BestsellerList {
@@ -19,6 +24,9 @@ public class BestsellerList {
     private Date oldest_published_date;
     private Date newest_published_date;
     private String updated;
+
+    @OneToMany(mappedBy = "bestsellerList", cascade = CascadeType.ALL)
+    public List<Book> books = new ArrayList<>();
 
     public String getList_name() {
         return list_name;
