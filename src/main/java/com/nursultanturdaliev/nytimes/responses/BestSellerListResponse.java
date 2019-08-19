@@ -7,6 +7,9 @@ import java.util.List;
 
 public class BestSellerListResponse extends BaseResponse {
 
+    private BestSellerListResponse() {
+    }
+
     public List<BookInfo> results;
 
     public BestSellerListResponse(HttpStatus httpStatus, List<BookInfo> bookInfos) {

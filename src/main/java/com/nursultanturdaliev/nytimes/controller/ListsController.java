@@ -1,4 +1,4 @@
-package com.nursultanturdaliev.nytimes.book;
+package com.nursultanturdaliev.nytimes.controller;
 
 import com.nursultanturdaliev.nytimes.entity.BestsellerList;
 import com.nursultanturdaliev.nytimes.entity.Book;

@@ -7,6 +7,8 @@ public class BookInfo {
     private String list_name;
     private Book book_details;
 
+    private BookInfo(){}
+
     public BookInfo(BestsellerList bestsellerList, Book book) {
         list_name = bestsellerList.getList_name();
         this.book_details = book;
